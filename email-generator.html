@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Generator - Dev Utilities</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html">Toolbox</a>
+            </div>
+            <ul class="nav-list">
+                <!-- <li><a href="index.html"><span class="icon">🏠</span>Home</a></li> -->
+                <li class="active"><a href="email-generator.html"><span class="icon">📧</span>Email Generator</a></li>
+                <li><a href="text-joiner.html"><span class="icon">🔗</span>Text Joiner</a></li>
+                <li><a href="date-cleaner.html"><span class="icon">📅</span>Date Cleaner</a></li>
+                <li><a href="order-invalidator.html"><span class="icon">❌</span>Order Invalidator</a></li>
+                <li><a href="review-remapper.html"><span class="icon">🔄</span>Review Remapper</a></li>
+                <li><a href="custom-question-parser.html"><span class="icon">❓</span>Question Parser</a></li>
+            </ul>
+        </nav>
+
+        <main class="content-wrapper">
+            <div class="tool-container">
+                <h1><span class="icon">📧</span>Dummy Email Generator</h1>
+                <p class="subtitle">Enter the number of emails you want to create and choose a domain.</p>
+
+                <div class="input-group" style="display: flex; gap: 15px; align-items: center;">
+                    <input type="number" id="emailCount" placeholder="e.g., 25" min="1" value="10" style="flex-grow: 1;">
+                    <select id="domainSelector" style="flex-grow: 2;">
+                        <option value="random">@ All (Random)</option>
+                        <option value="example.com">@example.com</option>
+                        <option value="mail.net">@mail.net</option>
+                        <option value="test.org">@test.org</option>
+                        <option value="dummy.io">@dummy.io</option>
+                        <option value="gmail.com">@gmail.com</option>
+                        <option value="yahoo.com">@yahoo.com</option>
+                    </select>
+                    <button id="generateBtn" class="btn-primary" style="width: auto; flex-shrink: 0;">Generate</button>
+                </div>
+                <br>
+                <textarea id="emailOutput" readonly placeholder="Your generated emails will appear here..."></textarea>
+            </div>
+        </main>
+    </div>
+    <script src="email-generator.js"></script>
+</body>
+</html>

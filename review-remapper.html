@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Product Remapper - Dev Utilities</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html">Toolbox</a>
+            </div>
+            <ul class="nav-list">
+                <!-- <li><a href="index.html"><span class="icon">🏠</span>Home</a></li> -->
+                <li><a href="email-generator.html"><span class="icon">📧</span>Email Generator</a></li>
+                <li><a href="text-joiner.html"><span class="icon">🔗</span>Text Joiner</a></li>
+                <li><a href="date-cleaner.html"><span class="icon">📅</span>Date Cleaner</a></li>
+                <li><a href="order-invalidator.html"><span class="icon">❌</span>Order Invalidator</a></li>
+                <li class="active"><a href="review-remapper.html"><span class="icon">🔄</span>Review Remapper</a></li>
+                <li><a href="custom-question-parser.html"><span class="icon">❓</span>Question Parser</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="content-wrapper">
+            <div class="tool-container">
+                <h1><span class="icon">🔄</span> Review Product Remapper</h1>
+                <p class="subtitle">Upload your mapping and review files, remap product IDs, clean columns, and download the result.</p>
+
+                <div class="main-content">
+                    <!-- File Input Column -->
+                    <div>
+                        <div class="input-group">
+                            <label>1. Upload Product Remapping File</label>
+                            <div id="remappingDropZone" class="drop-zone">
+                                <input type="file" id="remappingFileInput" accept=".csv" class="hidden">
+                                <div id="remappingPrompt">
+                                    <label for="remappingFileInput" class="file-upload-label">Choose File</label>
+                                    <span class="drop-zone__prompt">or drag and drop here</span>
+                                </div>
+                                <div id="remappingFileName" class="file-name hidden"></div>
+                            </div>
+                            <p class="description">Must contain Old IDs in Column A and New IDs in Column E.</p>
+                        </div>
+                        <div class="input-group">
+                            <label>2. Upload Reviews File</label>
+                            <div id="reviewsDropZone" class="drop-zone">
+                                <input type="file" id="reviewsFileInput" accept=".csv" class="hidden">
+                                 <div id="reviewsPrompt">
+                                    <label for="reviewsFileInput" class="file-upload-label">Choose File</label>
+                                    <span class="drop-zone__prompt">or drag and drop here</span>
+                                </div>
+                                <div id="reviewsFileName" class="file-name hidden"></div>
+                            </div>
+                            <p class="description">The file containing reviews with Product IDs in Column L.</p>
+                        </div>
+                    </div>
+                    <!-- Log Column -->
+                    <div id="logContainer" class="log-area hidden">
+                        <label for="logOutput">Process Log</label>
+                        <textarea id="logOutput" readonly placeholder="Process status will appear here..."></textarea>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="processBtn" class="btn-primary" disabled>Process Files</button>
+                    <button id="startOverBtn" class="btn-secondary">Start Over</button>
+                </div>
+
+                <!-- Download Area -->
+                <div id="downloadArea" class="hidden">
+                    <hr>
+                    <h2>Download Your File</h2>
+                    <div class="input-group">
+                        <label for="downloadFileName">Filename</label>
+                        <input type="text" id="downloadFileName" value="remapped_reviews.csv">
+                    </div>
+                    <a href="#" id="downloadLink" class="btn-download" download="remapped_reviews.csv">Download Remapped File</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="review-remapper.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Joiner - Dev Utilities</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html">Toolbox</a>
+            </div>
+            <ul class="nav-list">
+                <!-- <li><a href="index.html"><span class="icon">🏠</span>Home</a></li> -->
+                <li><a href="email-generator.html"><span class="icon">📧</span>Email Generator</a></li>
+                <li class="active"><a href="text-joiner.html"><span class="icon">🔗</span>Text Joiner</a></li>
+                <li><a href="date-cleaner.html"><span class="icon">📅</span>Date Cleaner</a></li>
+                <li><a href="order-invalidator.html"><span class="icon">❌</span>Order Invalidator</a></li>
+                <li><a href="review-remapper.html"><span class="icon">🔄</span>Review Remapper</a></li>
+                <li><a href="custom-question-parser.html"><span class="icon">❓</span>Question Parser</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="content-wrapper">
+            <div class="tool-container">
+                <h1><span class="icon">🔗</span>Text Joiner</h1>
+                <p class="subtitle">Paste text (one item per line) to join it into a single line with custom formatting.</p>
+
+                <div class="main-content">
+                    <div>
+                        <label for="inputText">Input Text</label>
+                        <textarea id="inputText" placeholder="Apple&#10;Banana&#10;Orange"></textarea>
+                    </div>
+                    <div>
+                        <label for="outputText">Result</label>
+                        <textarea id="outputText" readonly placeholder="Your joined text will appear here..."></textarea>
+                    </div>
+                </div>
+
+                <div class="input-group" style="display: flex; gap: 20px; align-items: center; justify-content: center;">
+                    <div>
+                        <label for="quoteType">Enclose with</label>
+                         <select id="quoteType">
+                            <option value='"'>Double Quotes ("")</option>
+                            <option value="'">Single Quotes ('')</option>
+                            <option value="">None</option>
+                        </select>
+                    </div>
+                     <div>
+                        <label for="separator">Separator</label>
+                        <input type="text" id="separator" value="," style="width: 100px;">
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="joinBtn" class="btn-primary">Join Text</button>
+                    <button id="copyBtn" class="btn-secondary">Copy Result</button>
+                    <button id="clearBtn" class="btn-secondary">Clear All</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="text-joiner.js"></script>
+</body>
+</html>
+

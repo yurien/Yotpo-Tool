@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Question Parser - Dev Utilities</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html">Toolbox</a>
+            </div>
+            <ul class="nav-list">
+                <!-- <li><a href="index.html"><span class="icon">🏠</span>Home</a></li> -->
+                <li><a href="email-generator.html"><span class="icon">📧</span>Email Generator</a></li>
+                <li><a href="text-joiner.html"><span class="icon">🔗</span>Text Joiner</a></li>
+                <li><a href="date-cleaner.html"><span class="icon">📅</span>Date Cleaner</a></li>
+                <li><a href="order-invalidator.html"><span class="icon">❌</span>Order Invalidator</a></li>
+                <li><a href="review-remapper.html"><span class="icon">🔄</span>Review Remapper</a></li>
+                <li class="active"><a href="custom-question-parser.html"><span class="icon">❓</span>Question Parser</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="content-wrapper">
+            <div class="tool-container">
+                <h1><span class="icon">❓</span> Custom Question Parser</h1>
+                <p class="subtitle">Upload a CSV file to automatically extract, format, and expand custom questions into new columns.</p>
+
+                <div class="input-group">
+                    <label>1. Upload Your Reviews CSV File</label>
+                    <div id="fileDropZone" class="drop-zone wide">
+                        <input type="file" id="csvFileInput" accept=".csv" class="hidden">
+                        <div id="filePrompt">
+                            <label for="csvFileInput" class="file-upload-label">Choose File</label>
+                            <span class="drop-zone__prompt">or drag and drop here</span>
+                        </div>
+                        <div id="fileName" class="file-name hidden"></div>
+                    </div>
+                    <p class="description">The tool will look for a column named "Review Custom Questions".</p>
+                </div>
+
+                <div id="controls" class="action-buttons hidden">
+                    <button id="processBtn" class="btn-primary" disabled>Process File</button>
+                    <button id="startOverBtn" class="btn-secondary">Start Over</button>
+                </div>
+
+                <div id="logContainer" class="log-area hidden">
+                    <label for="logOutput">Process Log</label>
+                    <textarea id="logOutput" readonly placeholder="Process status will appear here..."></textarea>
+                </div>
+
+                <div id="downloadArea" class="hidden">
+                    <hr>
+                    <h2>Download Your File</h2>
+                    <div class="input-group">
+                        <label for="downloadFileName">Filename</label>
+                        <input type="text" id="downloadFileName" value="formatted_reviews.csv">
+                    </div>
+                    <a href="#" id="downloadLink" class="btn-download" download="formatted_reviews.csv">Download Formatted File</a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="custom-question-parser.js"></script>
+</body>
+</html>
