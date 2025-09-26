@@ -292,3 +292,27 @@ button:disabled { background-color: #ced4da !important; cursor: not-allowed; }
     h1 { font-size: 1.8rem; }
 }
 
+#progressArea {
+    margin-top: 25px;
+}
+.progress-bar-container {
+    width: 100%;
+    height: 12px;
+    background-color: #e9ecef;
+    border-radius: 6px;
+    overflow: hidden;
+}
+#progressBar {
+    width: 0%;
+    height: 100%;
+    background-color: var(--primary-blue);
+    border-radius: 6px;
+    transition: width 0.3s ease-out;
+}
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 0.85em;
+    color: var(--text-secondary);
+}
