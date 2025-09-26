@@ -26,7 +26,7 @@ const logOutput = document.getElementById('logOutput');
 // --- 2. GLOBAL STATE & CONFIGURATION ---
 let isProcessing = false;
 let isCancelled = false;
-const BATCH_SIZE = 2500;
+const BATCH_SIZE = 5000;
 
 // --- 3. EVENT LISTENERS ---
 invalidateBtn.addEventListener('click', handleInvalidationClick);
@@ -291,4 +291,5 @@ function formatTime(ms) {
     const minutes = Math.floor(seconds / 60);
     seconds %= 60;
     return `${minutes > 0 ? `${minutes}m ` : ''}${seconds}s`;
+
 }
